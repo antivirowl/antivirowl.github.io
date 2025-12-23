@@ -11,4 +11,4 @@ Exterminator:
 Terran // Interior, rescue Sarah Kerrigan
 
 Guild of Thieves:
-Terran // 
+Terran // Take out a group of Terran thieves, there are also hostile zerg in the area, and a Protoss breeding garden to be avoided
