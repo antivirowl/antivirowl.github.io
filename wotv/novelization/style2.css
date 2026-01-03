@@ -1,0 +1,231 @@
+/* Reset defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #1e1e1e;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.book-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Back pages */
+.book-back {
+  position: absolute;
+  top: 0;
+  width: 820px;
+  height: 600px;
+  z-index: 0;
+}
+
+
+
+/* Left back pages aligned to left */
+.page-back.left {
+  position: absolute;
+ 
+  top: 0;
+  left: 0;
+  width: 410px;
+  height: 600px;
+  background-color: #e5e0ce;;
+  border-radius: 2px;
+  z-index: 0;
+  box-shadow: inset 1px 10px 12px 10px rgba(90,50,0,.1);
+}
+
+/* Right back pages aligned to right */
+.page-back.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 410px;
+  height: 600px;
+  background-color: #e5e0ce;;
+  border-radius: 2px;
+  z-index: 0;
+  box-shadow: inset 10px 3px 12px 2px rgba(90,50,0,.2);
+}
+/* Right back pages stacked downward */
+.page-back.right:nth-child(3) {
+  top: 5px;
+}
+
+
+
+
+
+/* Main visible book */
+.book {
+  display: flex;
+  z-index: 1;
+  max-width: 820px;
+  position: relative;
+}
+
+/* Gradient spine/gutter */
+.book::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,0.09), rgba(0,0,0,0.25));
+  transform: translateX(-50%);
+  z-index: 2;
+  border-radius: 2px;
+}
+
+/* Pages */
+.page {
+  width: 400px;
+  height: 600px;
+  background-color: #fff8e7;
+  padding: 60px 40px 60px 40px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Layered diagonal + orthogonal noise */
+.page::after,
+.page::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.page::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='1' fill='black' fill-opacity='0.015'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  transform: rotate(45deg);
+}
+
+.page::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='1' cy='1' r='1' fill='black' fill-opacity='0.01'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  transform: rotate(0deg);
+}
+
+/* Left and right page shadows */
+.page.left {
+  box-shadow: inset -8px 0 12px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15);;
+}
+
+.page.right {
+  box-shadow: inset 8px 0 12px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15);;
+}
+
+
+/* Header and footer */
+.header, .footer {
+  position: absolute;
+  top: 15px;      /* for header */
+  bottom: 15px;   /* for footer */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* horizontally center content */
+  align-items: center;      /* vertically center content inside header/footer height */
+  font-size: 0.9rem;
+  color: #555;
+  z-index: 3;
+  pointer-events: none;     /* optional: make sure header/footer don't block text selection */
+  font-weight: bold; font-variant: small-caps;
+}
+
+.header {
+  top: 15px;
+  bottom: auto;
+}
+
+.footer {
+  top: auto;
+  bottom: 15px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.footer {
+  bottom: 15px;
+}
+
+/* Typography */
+.book-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.chapter-title {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.page-number {
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Chapter-start page */
+.chapter-start .chapter-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center in top half */
+  align-items: center;
+  height: 50%; /* top half of page */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.chapter-start .chapter-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-start .chapter-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.chapter-start p {
+  margin-top: 1rem;
+}
+
+
+.page-back.left:first-child {
+  top: 5px; /* slightly lower than front page */
+}
+.page-back.right:first-child {
+  top: 5px; /* slightly lower than front page */
+}
