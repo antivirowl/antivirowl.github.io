@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Skeuomorphic Book</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="book-container">
+    <!-- illusion of pages behind -->
+    <div class="book-back">
+      <!-- Left back pages -->
+      <div class="page-back left"></div>
+      <div class="page-back left" style="transform: translateY(10px);"></div>
+
+      <!-- Right back pages -->
+      <div class="page-back right"></div>
+      <div class="page-back right" style="transform: translateY(10px);"></div>
+    </div>
+
+    <!-- visible book pages -->
+    <div class="book">
+      <!-- Chapter start page -->
+      <div class="page left chapter-start">
+        <div class="chapter-header">
+          <div class="chapter-number">Chapter 2</div>
+          <div class="chapter-title">The Journey Begins</div>
+        </div>
+
+        <p>Here begins the story of our chapter. The main text starts lower on the page, leaving the top half for the chapter header.</p>
+        <p>Additional paragraph to continue the story after the chapter header.</p>
+
+        <div class="footer">
+          <span class="page-number">5</span>
+        </div>
+      </div>
+
+      <!-- Regular right page -->
+      <div class="page right">
+        <div class="header">
+          <div class="header-content">
+            <div class="book-title">My Awesome Book</div>
+            <div class="chapter-title">Chapter 2 (Continued)</div>
+          </div>
+        </div>
+
+        <p>Another paragraph on the right-hand page. Keep paragraphs concise for comfortable reading.</p>
+        <p>More text goes here to simulate a real book page.</p>
+
+        <div class="footer">
+          <span class="page-number">6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
