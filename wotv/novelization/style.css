@@ -63,7 +63,7 @@
             z-index: 1;
             display: inline-block;
             overflow-y: auto; /* Enable scrolling if content overflows */
-            max-height: 85%; /* Prevent pages from exceeding the book's height */
+            max-height: 50%; /* Prevent pages from exceeding the book's height */
         }
 
         /* Page Titles and Content */
