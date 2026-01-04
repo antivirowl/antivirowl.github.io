@@ -43,6 +43,7 @@
             max-height: 100%; /* Prevent pages from exceeding the book's height */
         }
 
+
         /* Faux Paper Texture (More visible) */
         .page::before {
             content: "";
@@ -53,6 +54,16 @@
             bottom: 0;
             background: url('https://www.transparenttextures.com/patterns/old-map.png');
             opacity: 0.4; /* More visible paper texture */
+        }
+
+        .content {
+            width: 95%; /* Make pages a bit wider */
+            position: relative;
+            margin: 0; /* Remove margin to allow the pages to touch */
+            z-index: 1;
+            display: inline-block;
+            overflow-y: auto; /* Enable scrolling if content overflows */
+            max-height: 85%; /* Prevent pages from exceeding the book's height */
         }
 
         /* Page Titles and Content */
