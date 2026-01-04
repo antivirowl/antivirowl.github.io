@@ -244,14 +244,12 @@
 <script>
 /* Ordered list of page spreads */
 const pages = [
-    "index.html",
-    "chapter1.html",
-    "chapter2.html",
-    "chapter3.html"
+    "temp1.html",
+    "temp2.html",
 ];
 
 let currentIndex = pages.indexOf(
-    location.pathname.split("/").pop() || "index.html"
+    location.pathname.split("/").pop() || "temp2.html"
 );
 
 /* Go to next spread */
