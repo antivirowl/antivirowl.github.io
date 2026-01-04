@@ -33,3 +33,5 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".page-turn.next")?.style.pointerEvents = "none";
     }
 });
+
+console.log('hello')
