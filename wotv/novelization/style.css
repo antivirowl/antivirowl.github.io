@@ -11,6 +11,10 @@
             align-items: center;
             height: 95vh;
             overflow-x: hidden;
+            color: #111100;
+        }
+i {
+            color: #000011;
         }
 
         /* Book Container */
