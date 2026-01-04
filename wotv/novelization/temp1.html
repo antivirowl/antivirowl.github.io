@@ -149,6 +149,35 @@
             margin-bottom: 5px;
         }
       
+/* Page Turn Click Zones */
+.page-turn {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Bottom-left corner (Previous) */
+.page-turn.prev {
+    left: -30px;
+    cursor: w-resize;
+}
+
+/* Bottom-right corner (Next) */
+.page-turn.next {
+    right: -30px;
+    cursor: e-resize;
+}
+
+/* Optional subtle visual hint on hover */
+.page-turn:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,0,0.5), transparent 70%);
+}
       /* Footer (Page Numbers) */
         /* Footer (Page Numbers) */
         .page-footer {
