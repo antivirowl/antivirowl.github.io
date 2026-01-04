@@ -160,6 +160,36 @@
             color: #3e1d0f;
         }
 
+/* Page Turn Click Zones */
+.page-turn {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Bottom-left corner (Previous) */
+.page-turn.prev {
+    left: -30px;
+    cursor: w-resize;
+}
+
+/* Bottom-right corner (Next) */
+.page-turn.next {
+    right: -30px;
+    cursor: e-resize;
+}
+
+/* Optional subtle visual hint on hover */
+.page-turn:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+}
+
     </style>
 </head>
 <body>
@@ -207,7 +237,38 @@
                 &nbsp;&nbsp;&nbsp;iii
             </div>
         </div>
+        <div class="page-turn prev" onclick="prevPage()"></div>
+<div class="page-turn next" onclick="nextPage()"></div>
     </div>
+
+<script>
+/* Ordered list of page spreads */
+const pages = [
+    "index.html",
+    "chapter1.html",
+    "chapter2.html",
+    "chapter3.html"
+];
+
+let currentIndex = pages.indexOf(
+    location.pathname.split("/").pop() || "index.html"
+);
+
+/* Go to next spread */
+function nextPage() {
+    if (currentIndex < pages.length - 1) {
+        window.location.href = pages[currentIndex + 1];
+    }
+}
+
+/* Go to previous spread */
+function prevPage() {
+    if (currentIndex > 0) {
+        window.location.href = pages[currentIndex - 1];
+    }
+}
+</script>
+
 
 </body>
 </html>
