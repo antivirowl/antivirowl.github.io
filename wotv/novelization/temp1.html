@@ -160,6 +160,37 @@
             color: #3e1d0f;
         }
 
+        
+/* Page Turn Click Zones */
+.page-turn {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Bottom-left corner (Previous) */
+.page-turn.prev {
+    left: -30px;
+    cursor: w-resize;
+}
+
+/* Bottom-right corner (Next) */
+.page-turn.next {
+    right: -30px;
+    cursor: e-resize;
+}
+
+/* Optional subtle visual hint on hover */
+.page-turn:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,0,0.5), transparent 70%);
+}
+
     </style>
 </head>
 <body>
@@ -205,10 +236,14 @@
                 WOTV FFBE JP Server is live.<br></font>
             </center>
             <div class="page-footer right-footer" style="text-align: right;">
-                &nbsp;&nbsp;&nbsp; Page 1
+                &nbsp;&nbsp;&nbsp;
             </div>
         </div>
+<div class="page-turn prev" onclick="prevPage()"></div>
+<div class="page-turn next" onclick="nextPage()"></div>
     </div>
+
+<script src="book-navigation.js"></script>
 
 </body>
 </html>
