@@ -18,28 +18,14 @@ if (currentIndex === -1) {
 
 /* Go to next spread */
 function nextPage() {
-    const page = document.getElementById("rightPage");
-    if (!page) return;
-
-    page.classList.add("flipped");
-
-    setTimeout(() => {
-        if (currentIndex < pages.length - 1) {
-            window.location.href = pages[currentIndex + 1];
-        }
-    }, 600);
+    if (currentIndex < pages.length - 1) {
+        window.location.href = pages[currentIndex + 1];
+    }
 }
 
+/* Go to previous spread */
 function prevPage() {
-    const page = document.getElementById("leftPage");
-    if (!page) return;
-
-    // For previous, flip the left page toward the right
-    page.classList.add("flipped");
-
-    setTimeout(() => {
-        if (currentIndex > 0) {
-            window.location.href = pages[currentIndex - 1];
-        }
-    }, 600);
+    if (currentIndex > 0) {
+        window.location.href = pages[currentIndex - 1];
+    }
 }
