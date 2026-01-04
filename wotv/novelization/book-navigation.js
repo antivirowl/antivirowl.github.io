@@ -19,6 +19,8 @@ if (currentIndex === -1) {
 /* Go to next spread */
 function nextPage() {
     const page = document.getElementById("rightPage");
+    if (!page) return;
+
     page.classList.add("flipped");
 
     setTimeout(() => {
@@ -29,7 +31,10 @@ function nextPage() {
 }
 
 function prevPage() {
-    const page = document.getElementById("rightPage");
+    const page = document.getElementById("leftPage");
+    if (!page) return;
+
+    // For previous, flip the left page toward the right
     page.classList.add("flipped");
 
     setTimeout(() => {
