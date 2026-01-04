@@ -18,14 +18,23 @@ if (currentIndex === -1) {
 
 /* Go to next spread */
 function nextPage() {
-    if (currentIndex < pages.length - 1) {
-        window.location.href = pages[currentIndex + 1];
-    }
+    const page = document.getElementById("rightPage");
+    page.classList.add("flipped");
+
+    setTimeout(() => {
+        if (currentIndex < pages.length - 1) {
+            window.location.href = pages[currentIndex + 1];
+        }
+    }, 600);
 }
 
-/* Go to previous spread */
 function prevPage() {
-    if (currentIndex > 0) {
-        window.location.href = pages[currentIndex - 1];
-    }
+    const page = document.getElementById("rightPage");
+    page.classList.add("flipped");
+
+    setTimeout(() => {
+        if (currentIndex > 0) {
+            window.location.href = pages[currentIndex - 1];
+        }
+    }, 600);
 }
