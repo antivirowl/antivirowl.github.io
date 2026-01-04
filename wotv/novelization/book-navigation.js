@@ -1,5 +1,4 @@
-console.log("hello")
-alert("hi")
+
 
 /* Ordered list of page spreads */
 const pages = [
