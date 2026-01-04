@@ -149,35 +149,6 @@
             margin-bottom: 5px;
         }
       
-/* Page Turn Click Zones */
-.page-turn {
-    position: absolute;
-    bottom: 0;
-    width: 120px;
-    height: 120px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-/* Bottom-left corner (Previous) */
-.page-turn.prev {
-    left: -30px;
-    cursor: w-resize;
-}
-
-/* Bottom-right corner (Next) */
-.page-turn.next {
-    right: -30px;
-    cursor: e-resize;
-}
-
-/* Optional subtle visual hint on hover */
-.page-turn:hover::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255,255,0,0.5), transparent 70%);
-}
       /* Footer (Page Numbers) */
         /* Footer (Page Numbers) */
         .page-footer {
@@ -188,45 +159,7 @@
             font-size: 1em;
             color: #3e1d0f;
         }
-/* Page flip container setup */
-.book {
-    perspective: 2000px;
-}
 
-/* Flippable page */
-.page.flip {
-    position: absolute;
-    top: 15px;
-    bottom: 15px;
-    width: 49%;
-    transform-origin: left center;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    z-index: 4;
-}
-
-/* Right page initial position */
-.page.flip.right {
-    right: 15px;
-}
-
-/* Flipped state */
-.page.flip.flipped {
-    transform: rotateY(-180deg);
-}
-
-/* Back side of page */
-.page.flip::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #fff4e1;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
-}
-
-        
     </style>
 </head>
 <body>
@@ -239,11 +172,6 @@
             <span class="letter">.. S1</span>
             <span class="letter">P2</span>
             <span class="letter">P3</span>
-
-                        <hr>
-            
-            <span class="letter">&lt;&lt;</span>
-            <span class="letter">&gt;&gt;</span>
         </div>
 
         <!-- Left Page -->
@@ -262,7 +190,7 @@
         <div class="binding"></div>
 
         <!-- Right Page -->
-        <div class="page flip right" id="rightPage">
+        <div class="page">
                       <div class="page-header">
                <br><br><br>
             </div>
@@ -277,16 +205,10 @@
                 WOTV FFBE JP Server is live.<br></font>
             </center>
             <div class="page-footer right-footer" style="text-align: right;">
-                &nbsp;&nbsp;&nbsp; 
-                
+                &nbsp;&nbsp;&nbsp; Page 1
             </div>
         </div>
-
-<div class="page-turn prev" onclick="prevPage()"></div>
-<div class="page-turn next" onclick="nextPage()"></div>
     </div>
-
-<script src="book-navigation.js?v=dev"></script>
 
 </body>
 </html>
