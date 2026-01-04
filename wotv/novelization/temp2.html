@@ -189,38 +189,7 @@
     inset: 0;
     background: radial-gradient(circle at center, rgba(255,255,0,0.5), transparent 70%);
 }
-.page.flip.left {
-    left: 15px;
-    transform-origin: right center;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    z-index: 3;
-}
 
-/* Right page transform origin */
-.page.flip.right {
-    right: 15px;
-    transform-origin: left center;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    z-index: 4;
-}
-
-/* Flipped state */
-.page.flip.flipped {
-    transform: rotateY(-180deg);
-}
-
-/* Backside of both pages */
-.page.flip::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #fff4e1;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
-}
     </style>
 </head>
 <body>
@@ -240,7 +209,7 @@
         </div>
 
         <!-- Left Page -->
-        <div class="page flip left" id="leftPage">
+        <div class="page">
                       <div class="page-header">
                  
             </div>
@@ -269,7 +238,7 @@
             <h3>The First Visions War</h3><h4>-CROSS BLOOD-</h4>
             </center>
             <div class="page-footer right-footer">
-                &nbsp;&nbsp;&nbsp; taco
+                &nbsp;&nbsp;&nbsp; 
             </div>
         </div>
 <div class="page-turn prev" onclick="prevPage()"></div>
