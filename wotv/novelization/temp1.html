@@ -160,36 +160,6 @@
             color: #3e1d0f;
         }
 
-/* Page Turn Click Zones */
-.page-turn {
-    position: absolute;
-    bottom: 0;
-    width: 120px;
-    height: 120px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-/* Bottom-left corner (Previous) */
-.page-turn.prev {
-    left: -30px;
-    cursor: w-resize;
-}
-
-/* Bottom-right corner (Next) */
-.page-turn.next {
-    right: -30px;
-    cursor: e-resize;
-}
-
-/* Optional subtle visual hint on hover */
-.page-turn:hover::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
-}
-
     </style>
 </head>
 <body>
@@ -211,7 +181,7 @@
             </div>
             &nbsp;
             <div class="page-footer left-footer" style="overflow: hidden; display: flex; align-items: center;    justify-content: center; ">
-               <img src="https://antivirowl.github.io/wotv/novelization/i/mont.png" style="height: 70vh; overflow: hidden;">
+               <img src="https://antivirowl.github.io/wotv/novelization/i/sterne.png" style="height: 68vh; overflow: hidden;">
             <br><br>
             </div>
         </div>
@@ -222,53 +192,23 @@
         <!-- Right Page -->
         <div class="page">
                       <div class="page-header">
-               <br> War of the Visions: <br> Final Fantasy Brave Exvius
+               <br><br><br>
             </div>
             <center><br><br>
-            <h2>Contents</h2>
+            <h1>War of the Visions: </h1><h2>Final Fantasy Brave Exvius</h2>
             
-            <h3>War of Lion's Valley</h3><h4>-CROSSED BLADES-<br></h4>
-          
-            <h3>War of the Gale Highlands</h3><h4>-BLOODY BULLET-<br></h4>
-          
-            <h3>The First Visions War</h3><h4>-CROSS BLOOD-</h4>
+            This is a fan-project to create a novelization of this<br>
+                online-service game following the closing of the global server.<br><br>
+                <font size="-1">
+                WOTV: FFBE is co-developed by Square Enix and Gumi Inc.<br>
+                WOTV: FFBE is copyright to Square Enix.<br>
+                WOTV FFBE JP Server is live.<br></font>
             </center>
-            <div class="page-footer right-footer">
-                &nbsp;&nbsp;&nbsp;iii
+            <div class="page-footer right-footer" style="text-align: right;">
+                &nbsp;&nbsp;&nbsp; Page 1
             </div>
         </div>
-        <div class="page-turn prev" onclick="prevPage()"></div>
-<div class="page-turn next" onclick="nextPage()"></div>
     </div>
-
-<script>
-/* Ordered list of page spreads */
-const pages = [
-    "index.html",
-    "chapter1.html",
-    "chapter2.html",
-    "chapter3.html"
-];
-
-let currentIndex = pages.indexOf(
-    location.pathname.split("/").pop() || "index.html"
-);
-
-/* Go to next spread */
-function nextPage() {
-    if (currentIndex < pages.length - 1) {
-        window.location.href = pages[currentIndex + 1];
-    }
-}
-
-/* Go to previous spread */
-function prevPage() {
-    if (currentIndex > 0) {
-        window.location.href = pages[currentIndex - 1];
-    }
-}
-</script>
-
 
 </body>
 </html>
