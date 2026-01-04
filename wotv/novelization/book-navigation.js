@@ -1,13 +1,21 @@
+console.log("hello")
+alert("hi")
+
 /* Ordered list of page spreads */
 const pages = [
     "temp1.html",
     "temp2.html",
 ];
 
-/* Detect current page */
-let currentIndex = pages.indexOf(
-    location.pathname.split("/").pop() || "index.html"
-);
+/* Get current filename */
+const currentFile = location.pathname.split("/").pop() || "index.html";
+
+/* Determine current index */
+const currentIndex = pages.indexOf(currentFile);
+
+if (currentIndex === -1) {
+    console.warn("Page not found in navigation list:", currentFile);
+}
 
 /* Go to next spread */
 function nextPage() {
@@ -22,16 +30,3 @@ function prevPage() {
         window.location.href = pages[currentIndex - 1];
     }
 }
-
-/* Optional: disable corners when unavailable */
-window.addEventListener("DOMContentLoaded", () => {
-    if (currentIndex <= 0) {
-        document.querySelector(".page-turn.prev")?.style.pointerEvents = "none";
-    }
-
-    if (currentIndex >= pages.length - 1) {
-        document.querySelector(".page-turn.next")?.style.pointerEvents = "none";
-    }
-});
-
-console.log('hello')
