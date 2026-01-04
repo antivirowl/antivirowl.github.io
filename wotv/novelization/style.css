@@ -62,7 +62,7 @@
             margin: 0; /* Remove margin to allow the pages to touch */
             display: inline-block;
             overflow-y: auto; /* Enable scrolling if content overflows */
-            max-height: 90%; /* Prevent pages from exceeding the book's height */
+            max-height: 85%; /* Prevent pages from exceeding the book's height */
         }
 
         /* Page Titles and Content */
